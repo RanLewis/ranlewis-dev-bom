@@ -10,9 +10,230 @@
     <name>Ranlewis Dev Bom</name>
     <description>Bill of Materials POM (BOM) for ranlewis to development</description>
     <packaging>pom</packaging>
+    <url>https://github.com/RanLewis/ranlewis-dev-bom</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>ranlewis</id>
+            <name>Ran Lewis</name>
+            <email>ranlewis@outlook.com</email>
+            <roles>
+                <role>Project Manager</role>
+                <role>Architect</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>https://github.com/RanLewis/ranlewis-dev-bom.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:RanLewis/ranlewis-dev-bom.git</developerConnection>
+        <url>https://github.com/RanLewis/ranlewis-dev-bom</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <lombok.version>1.18.36</lombok.version>
+        <mysql.version>8.0.30</mysql.version>
+        <mybatis-plus-boot-starter.version>3.5.9</mybatis-plus-boot-starter.version>
+        <jjwt>0.9.1</jjwt>
+        <jaxb-api>2.3.1</jaxb-api>
+        <aliyun.ocr>3.1.2</aliyun.ocr>
+        <aliyun.sdk.oss>3.10.2</aliyun.sdk.oss>
+        <spring-ai.version>1.1.0</spring-ai.version>
+        <redission.version>3.33.0</redission.version>
+        <knife4j-springboot3.version>4.4.0</knife4j-springboot3.version>
+        <knife4j-springboot2.version>4.4.0</knife4j-springboot2.version>
+        <hutool.version>5.8.9</hutool.version>
+        <jakarta.version>5.0.0</jakarta.version>
+        <aliyun.green.version>2.2.8</aliyun.green.version>
+        <easyexcel.version>3.1.1</easyexcel.version>
+        <wx.sdk.version>4.4.0</wx.sdk.version>
+        <druid.version>1.2.1</druid.version>
+        <wechatpay.version>0.2.16</wechatpay.version>
+        <mybatis.spring.version>2.2.0</mybatis.spring.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--阿里云OCR-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>ocr_api20210707</artifactId>
+                <version>${aliyun.ocr}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <scope>runtime</scope>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--MybatisPlus BOM-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-bom</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>${jaxb-api}</version>
+            </dependency>
+            <!--aliyun OSS-->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.sdk.oss}</version>
+            </dependency>
+            <!--spring ai-->
+            <dependency>
+                <groupId>group.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redission.version}</version>
+            </dependency>
+            <!--knife4j for Springboot3.x-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+                <version>${knife4j-springboot3.version}</version>
+            </dependency>
+            <!--knife4j for Springboot2.x-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
+                <version>${knife4j-springboot2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.version}</version>
+            </dependency>
+            <!--aliyun 内容安全-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>green20220302</artifactId>
+                <version>${aliyun.green.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>wx-java-mp-spring-boot-starter</artifactId>
+                <version>${wx.sdk.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.wechatpay-apiv3</groupId>
+                <artifactId>wechatpay-java</artifactId>
+                <version>${wechatpay.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+
+            <!--   central发布插件    -->
+            <plugin>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
+                </configuration>
+            </plugin>
+            <!--   source源码插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--   javadoc插件 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <executable>D:\exe\GnuPG\bin\gpg.exe</executable>
+                    <keyname>ranlewis</keyname>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>
