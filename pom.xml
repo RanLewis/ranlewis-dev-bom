@@ -6,7 +6,7 @@
 
     <groupId>io.github.ranlewis</groupId>
     <artifactId>ranlewis-dev-bom</artifactId>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <name>Ranlewis Dev Bom</name>
     <description>Bill of Materials POM (BOM) for ranlewis to development</description>
     <packaging>pom</packaging>
@@ -58,6 +58,14 @@
         <druid.version>1.2.1</druid.version>
         <wechatpay.version>0.2.16</wechatpay.version>
         <mybatis.spring.version>2.2.0</mybatis.spring.version>
+        <junit5.version>5.8.2</junit5.version>
+        <netty.version>4.1.115.Final</netty.version>
+        <logback.version>1.2.11</logback.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <jetcd.version>0.7.7</jetcd.version>
+        <junit4.version>4.13.2</junit4.version>
+        <cglib.version>3.1</cglib.version>
+        <amqp.vetsion>5.16.0</amqp.vetsion>
     </properties>
 
     <dependencyManagement>
@@ -76,7 +84,6 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <scope>runtime</scope>
                 <version>${mysql.version}</version>
             </dependency>
             <!--MybatisPlus BOM-->
@@ -160,14 +167,61 @@
                 <version>${wechatpay.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.version}</version>
+            </dependency>
+            <!-- JUnit 5 Dependency -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit5.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit5.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!--JUnit 4 Dependency-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit4.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <!-- log dependence-->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.etcd</groupId>
+                <artifactId>jetcd-core</artifactId>
+                <version>${jetcd.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${amqp.vetsion}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
