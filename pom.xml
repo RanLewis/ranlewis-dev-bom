@@ -6,7 +6,7 @@
 
     <groupId>io.github.ranlewis</groupId>
     <artifactId>ranlewis-dev-bom</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
 
     <name>Ranlewis Dev Bom</name>
     <description>Bill of Materials POM (BOM) for ranlewis to development</description>
@@ -41,7 +41,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>3.3.4</spring.boot.version>
-        <spring-cloud.version>2023.0.1.3</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.1.3</spring-cloud-alibaba.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
         <lombok.version>1.18.36</lombok.version>
         <mysql.version>8.0.30</mysql.version>
         <mybatis-plus-boot-starter.version>3.5.9</mybatis-plus-boot-starter.version>
@@ -75,6 +76,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
@@ -84,7 +92,7 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
