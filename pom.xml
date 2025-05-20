@@ -6,7 +6,7 @@
 
     <groupId>io.github.ranlewis</groupId>
     <artifactId>ranlewis-dev-bom</artifactId>
-    <version>1.5.1</version>
+    <version>1.5.2</version>
 
     <name>Ranlewis Dev Bom</name>
     <description>Bill of Materials POM (BOM) for ranlewis to development</description>
@@ -160,6 +160,12 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
                 <version>${knife4j-springboot2.version}</version>
+            </dependency>
+            <!-- 用于gateway聚合knife4j文档 -->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-gateway-spring-boot-starter</artifactId>
+                <version>${knife4j-springboot3.version}</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
